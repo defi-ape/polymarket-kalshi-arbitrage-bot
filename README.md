@@ -1,5 +1,7 @@
 # Polymarket–Kalshi Arbitrage Bot
 
+**Repository:** [https://github.com/Composio-HQ/polymarket-kalshi-arbitrage-bot](https://github.com/Composio-HQ/polymarket-kalshi-arbitrage-bot)
+
 15-minute market trading bot that detects price differences between **Polymarket** and **Kalshi** and decides **when to buy on Polymarket** based on configurable rules. 
 
 ## This is 90% profitable logic, 100% profitable logic version 2 in sale! 🤞
