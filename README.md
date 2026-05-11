@@ -5,7 +5,7 @@ Professional TypeScript bot for monitoring short-duration prediction markets acr
 The bot is designed for 15-minute markets where fast pricing updates, clear execution rules, and transparent runtime status matter. It continuously compares Kalshi YES pricing against Polymarket UP pricing, exposes a simple monitoring API, and can initialize an authenticated Polymarket order client for automated execution.
 
 <p>
-  <a href="https://github.com/Longbridges/polymarket-kalshi-arbitrage-bot">
+  <a href="https://github.com/Drakkar-Softwares/polymarket-kalshi-arbitrage-bot">
     <img src="https://img.shields.io/badge/Repository-GitHub-181717?style=for-the-badge&logo=github" alt="GitHub repository" />
   </a>
 </p>
@@ -80,37 +80,58 @@ Resulting signal:
 }
 ```
 
-## Demo (video + still frame)
+## Demo (Reddit thread)
 
-Media is stored under [`src/img and video/`](./src/img%20and%20video/):
+The screen capture and text below come from this thread:  
+[https://www.reddit.com/r/SideProject/comments/1si8xlm/kalshi_trading_bot_can_be_used_for_value_betting/](https://www.reddit.com/r/SideProject/comments/1si8xlm/kalshi_trading_bot_can_be_used_for_value_betting/)
 
-- **Screen recording:** [`kalshi-trading-bot-reddit-video.mp4`](./src/img%20and%20video/kalshi-trading-bot-reddit-video.mp4)
-- **Still frame:** [`videoframe_12191.png`](./src/img%20and%20video/videoframe_12191.png)
+The post and video feature **Claw Arbs** (local desktop software). This repository is a separate TypeScript bot; the section is included for context on Kalshi/Polymarket arbitrage tooling.
 
-Recording shows Kalshi’s **BTC Up or Down — 15 minutes** market with the green on-screen HUD (UP/DOWN prices, timers, actions) and the **NightShark** log: trigger threshold (`> 70`), UP order placement, position confirmation retries, then stop-loss / resolution monitoring.
+Media in the repo: [`src/img and video/`](./src/img%20and%20video/)
+
+- **Video (from the post):** [`reddit-1si8xlm-demo.mp4`](./src/img%20and%20video/reddit-1si8xlm-demo.mp4)
+- **Poster / preview frame:** [`reddit-1si8xlm-poster.png`](./src/img%20and%20video/reddit-1si8xlm-poster.png)
+
+### Post title
+
+**Kalshi trading bot - can be used for value betting, and with polymarket for arbitrage trading**
+
+### Post body (verbatim, lightly formatted)
+
+Claw Arbs is a desktop app for running arbitrage strategies across prediction markets and sportsbooks. Started as "can I detect price gaps between Kalshi and Polymarket in real time" and grew from there.
+
+The bit I'm proudest of: instead of writing a scraper per bookmaker, the app has a point-and-click calibration wizard. You click on an odds cell, it figures out the CSS selector, and from then on it can read prices off that site. Works on pretty much any bookmaker, and the calibrations are shareable as JSON bundles. Took way longer to build than I want to admit.
+
+Everything runs locally. SQLite on your machine, encrypted credential vault, no cloud backend holding your API keys. Paper trading is the default, real execution is opt-in behind a confirmation.
+
+Stack: Python + FastAPI backend, React + TypeScript frontend, Playwright for the scraping side, packaged into native apps for Windows, Mac, and Linux via Nuitka.
+
+Current state: Soft-launched the alpha a couple of weeks ago, around 100 people running it. Free during alpha. Kalshi, Polymarket, and Cloudbet are wired in out of the box, any other bookmaker you calibrate yourself. You can test it: [clawarbs.com](https://clawarbs.com)
+
+Happy to answer questions, and I'd love feedback on whether the strategy setup makes sense to people who aren't me.
 
 ### Video
 
 <video
-  poster="./src/img%20and%20video/videoframe_12191.png"
-  src="./src/img%20and%20video/kalshi-trading-bot-reddit-video.mp4"
+  poster="./src/img%20and%20video/reddit-1si8xlm-poster.png"
+  src="./src/img%20and%20video/reddit-1si8xlm-demo.mp4"
   controls
   playsinline
   preload="metadata"
   width="100%">
   Your browser cannot play this clip inline. Open the file directly:
-  <a href="./src/img%20and%20video/kalshi-trading-bot-reddit-video.mp4">kalshi-trading-bot-reddit-video.mp4</a>.
+  <a href="./src/img%20and%20video/reddit-1si8xlm-demo.mp4">reddit-1si8xlm-demo.mp4</a>.
 </video>
 
-### Still frame (full resolution)
+### Still frame (preview)
 
 <p align="center">
   <img
-    src="./src/img%20and%20video/videoframe_12191.png"
-    alt="Kalshi BTC 15m market: trading HUD with UP/DOWN prices and NightShark log (trigger, order, position confirm, stop-loss)"
+    src="./src/img%20and%20video/reddit-1si8xlm-poster.png"
+    alt="Preview frame from the Reddit-hosted video in the SideProject thread"
     width="100%" />
   <br />
-  <em>Same session as the recording — Kalshi chart/order book with HUD and NightShark application log.</em>
+  <em>Poster frame from the same Reddit clip (<code>v.redd.it/4zulhbnalhug1</code>).</em>
 </p>
 
 ## Architecture

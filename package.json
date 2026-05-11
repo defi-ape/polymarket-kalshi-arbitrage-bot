@@ -2,6 +2,11 @@
   "name": "polymarket-kalshi-arbitrage-bot",
   "version": "1.0.0",
   "description": "15-min market arbitrage bot: detect price differences between Polymarket and Kalshi, decide when to buy on Polymarket",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Drakkar-Softwares/polymarket-kalshi-arbitrage-bot.git"
+  },
+  "homepage": "https://github.com/Drakkar-Softwares/polymarket-kalshi-arbitrage-bot",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
