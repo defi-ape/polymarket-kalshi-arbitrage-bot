@@ -4,9 +4,9 @@
   "description": "15-min market arbitrage bot: detect price differences between Polymarket and Kalshi, decide when to buy on Polymarket",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Drakkar-Softwares/polymarket-kalshi-arbitrage-bot.git"
+    "url": "https://github.com/sanzoI-tech/polymarket-kalshi-arbitrage-bot.git"
   },
-  "homepage": "https://github.com/Drakkar-Softwares/polymarket-kalshi-arbitrage-bot",
+  "homepage": "https://github.com/sanzoI-tech/polymarket-kalshi-arbitrage-bot",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
@@ -14,7 +14,7 @@
     "dev": "ts-node-dev --respawn src/index.ts",
     "typecheck": "tsc --noEmit"
   },
-  "keywords": ["polymarket", "kalshi", "arbitrage", "trading", "bot", "15min", "market", "polymarket trading bot", "kalshi trading bot", "polymarket arbitrage bot", "kalshi arbitrage bot", "arbitrage bot in prediction market", "polymarket bot", "polymarket trading bot", "polymarket bot poly", "arbitrge", "polymarket bot poly arbitrage bot"],
+  "keywords": ["polymarket", "kalshi", "arbitrage", "trading", "bot", "15min", "market", "polymarket trading bot", "kalshi trading bot", "polymarket arbitrage bot", "kalshi arbitrage bot", "arbitrage bot in prediction market", "polymarket bot", "polymarket bot poly", "arbitrge", "polymarket bot poly arbitrage bot", "polymarket kalshi trading bot", "polymarket-kalshi-arbitrage", "prediction-markets", "event-contracts", "clob", "typescript-bot"],
   "license": "MIT",
   "engines": { "node": ">=18" },
   "dependencies": {

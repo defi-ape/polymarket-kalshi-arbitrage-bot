@@ -2,10 +2,12 @@
 
 Professional TypeScript bot for monitoring short-duration prediction markets across **Polymarket** and **Kalshi**, detecting pricing gaps, and placing buy orders on Polymarket when configured arbitrage rules are satisfied.
 
+**Canonical repository:** [github.com/sanzoI-tech/polymarket-kalshi-arbitrage-bot](https://github.com/sanzoI-tech/polymarket-kalshi-arbitrage-bot)
+
 The bot is designed for 15-minute markets where fast pricing updates, clear execution rules, and transparent runtime status matter. It continuously compares Kalshi YES pricing against Polymarket UP pricing, exposes a simple monitoring API, and can initialize an authenticated Polymarket order client for automated execution.
 
 <p>
-  <a href="https://github.com/Drakkar-Softwares/polymarket-kalshi-arbitrage-bot">
+  <a href="https://github.com/sanzoI-tech/polymarket-kalshi-arbitrage-bot">
     <img src="https://img.shields.io/badge/Repository-GitHub-181717?style=for-the-badge&logo=github" alt="GitHub repository" />
   </a>
 </p>
@@ -80,58 +82,55 @@ Resulting signal:
 }
 ```
 
-## Demo (Reddit thread)
+## Demo (Instagram reel — Polymarket vs Kalshi for bots)
 
-The screen capture and text below come from this thread:  
-[https://www.reddit.com/r/SideProject/comments/1si8xlm/kalshi_trading_bot_can_be_used_for_value_betting/](https://www.reddit.com/r/SideProject/comments/1si8xlm/kalshi_trading_bot_can_be_used_for_value_betting/)
+Primary source: [https://www.instagram.com/reel/DWrBSHxlIZ3/](https://www.instagram.com/reel/DWrBSHxlIZ3/) (permalink on profile: [@moondevonyt](https://www.instagram.com/moondevonyt/reel/DWrBSHxlIZ3/)).
 
-The post and video feature **Claw Arbs** (local desktop software). This repository is a separate TypeScript bot; the section is included for context on Kalshi/Polymarket arbitrage tooling.
+### Source metadata (public, as shown on Instagram)
 
-Media in the repo: [`src/img and video/`](./src/img%20and%20video/)
+- **Account:** [@moondevonyt](https://www.instagram.com/moondevonyt/) — display name *Moon Dev on YT* (verified).
+- **Post type:** Reel / `GraphVideo` clip (vertical 720×1280 class dimensions in embed data).
+- **Published:** April 3, 2026 (Instagram “taken at” timestamp in page metadata).
+- **Caption (verbatim):** *Polymarket or kalshi for trading bots?*
+- **Audio:** Original audio credited to the same account (“Moon Dev on YT on Instagram…” in `og:title`).
+- **Approximate length:** ~39 seconds (progressive clip; duration from Instagram embed payload when the local video was mirrored).
+- **Engagement (snapshot only — changes on Instagram over time):** on the order of hundreds of reel plays and a few dozen likes on the public counter at mirror time; use the live post for current numbers.
 
-- **Video (from the post):** [`reddit-1si8xlm-demo.mp4`](./src/img%20and%20video/reddit-1si8xlm-demo.mp4)
-- **Poster / preview frame:** [`reddit-1si8xlm-poster.png`](./src/img%20and%20video/reddit-1si8xlm-poster.png)
+The spoken rundown is only in the clip (Instagram’s public HTML does not ship a full transcript). In short: the hook is choosing **one venue** versus wiring **both** when automation and **cross-platform** prices matter.
 
-### Post title
+### How that question maps to this repository
 
-**Kalshi trading bot - can be used for value betting, and with polymarket for arbitrage trading**
+This repo is **not** the app from the reel; it is a **standalone TypeScript service**. It still illustrates one concrete answer for **cross-venue** work: the bot **polls both venues** (Kalshi trade API + Polymarket CLOB), runs the **spread and late-resolution rules** in [Strategy Overview](#strategy-overview), and, when trading is enabled, places **Polymarket** buy orders. So for “Polymarket *or* Kalshi?” in the sense of **mispricing between books**, this code assumes **both feeds for signals** and **Polymarket** for the automated buy side wired in `polymarketOrders.ts`.
 
-### Post body (verbatim, lightly formatted)
+### Local copy (for README / offline use)
 
-Claw Arbs is a desktop app for running arbitrage strategies across prediction markets and sportsbooks. Started as "can I detect price gaps between Kalshi and Polymarket in real time" and grew from there.
+Mirrored under [`src/img and video/`](./src/img%20and%20video/) (shortcode **DWrBSHxlIZ3**):
 
-The bit I'm proudest of: instead of writing a scraper per bookmaker, the app has a point-and-click calibration wizard. You click on an odds cell, it figures out the CSS selector, and from then on it can read prices off that site. Works on pretty much any bookmaker, and the calibrations are shareable as JSON bundles. Took way longer to build than I want to admit.
-
-Everything runs locally. SQLite on your machine, encrypted credential vault, no cloud backend holding your API keys. Paper trading is the default, real execution is opt-in behind a confirmation.
-
-Stack: Python + FastAPI backend, React + TypeScript frontend, Playwright for the scraping side, packaged into native apps for Windows, Mac, and Linux via Nuitka.
-
-Current state: Soft-launched the alpha a couple of weeks ago, around 100 people running it. Free during alpha. Kalshi, Polymarket, and Cloudbet are wired in out of the box, any other bookmaker you calibrate yourself. You can test it: [clawarbs.com](https://clawarbs.com)
-
-Happy to answer questions, and I'd love feedback on whether the strategy setup makes sense to people who aren't me.
+- **Video:** [`instagram-DWrBSHxlIZ3-demo.mp4`](./src/img%20and%20video/instagram-DWrBSHxlIZ3-demo.mp4)
+- **Poster / cover frame:** [`instagram-DWrBSHxlIZ3-poster.jpg`](./src/img%20and%20video/instagram-DWrBSHxlIZ3-poster.jpg)
 
 ### Video
 
 <video
-  poster="./src/img%20and%20video/reddit-1si8xlm-poster.png"
-  src="./src/img%20and%20video/reddit-1si8xlm-demo.mp4"
+  poster="./src/img%20and%20video/instagram-DWrBSHxlIZ3-poster.jpg"
+  src="./src/img%20and%20video/instagram-DWrBSHxlIZ3-demo.mp4"
   controls
   playsinline
   preload="metadata"
   width="100%">
   Your browser cannot play this clip inline. Open the file directly:
-  <a href="./src/img%20and%20video/reddit-1si8xlm-demo.mp4">reddit-1si8xlm-demo.mp4</a>.
+  <a href="./src/img%20and%20video/instagram-DWrBSHxlIZ3-demo.mp4">instagram-DWrBSHxlIZ3-demo.mp4</a>.
 </video>
 
 ### Still frame (preview)
 
 <p align="center">
   <img
-    src="./src/img%20and%20video/reddit-1si8xlm-poster.png"
-    alt="Preview frame from the Reddit-hosted video in the SideProject thread"
+    src="./src/img%20and%20video/instagram-DWrBSHxlIZ3-poster.jpg"
+    alt="Cover frame from the Instagram reel DWrBSHxlIZ3 (Polymarket or Kalshi for trading bots?)"
     width="100%" />
   <br />
-  <em>Poster frame from the same Reddit clip (<code>v.redd.it/4zulhbnalhug1</code>).</em>
+  <em>Poster image from the same reel (local mirror; Instagram: <code>DWrBSHxlIZ3</code>).</em>
 </p>
 
 ## Architecture
