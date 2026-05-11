@@ -8,9 +8,6 @@ The bot is designed for 15-minute markets where fast pricing updates, clear exec
   <a href="https://github.com/Longbridges/polymarket-kalshi-arbitrage-bot">
     <img src="https://img.shields.io/badge/Repository-GitHub-181717?style=for-the-badge&logo=github" alt="GitHub repository" />
   </a>
-  <a href="https://t.me/cashblaze129" target="_blank">
-    <img src="https://img.shields.io/badge/Telegram-Contact-0088cc?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram contact" />
-  </a>
 </p>
 
 > Important: Prediction market trading involves risk. This project provides configurable automation and monitoring logic; it does not guarantee profit or eliminate execution, liquidity, market, regulatory, or operational risk.
@@ -83,11 +80,38 @@ Resulting signal:
 }
 ```
 
-## Screenshots
+## Demo (video + still frame)
 
-<img width="1452" height="887" alt="polymarket-kalshi-arbitrage-dashboard" src="https://github.com/user-attachments/assets/f4d9a074-2b2a-4c0c-a78c-562fb14d6b77" />
+Media is stored under [`src/img and video/`](./src/img%20and%20video/):
 
-<img width="1073" height="290" alt="polymarket-kalshi-arbitrage-signal" src="https://github.com/user-attachments/assets/920668cb-5ee2-48ec-b91d-d39420bc3443" />
+- **Screen recording:** [`kalshi-trading-bot-reddit-video.mp4`](./src/img%20and%20video/kalshi-trading-bot-reddit-video.mp4)
+- **Still frame:** [`videoframe_12191.png`](./src/img%20and%20video/videoframe_12191.png)
+
+Recording shows Kalshi’s **BTC Up or Down — 15 minutes** market with the green on-screen HUD (UP/DOWN prices, timers, actions) and the **NightShark** log: trigger threshold (`> 70`), UP order placement, position confirmation retries, then stop-loss / resolution monitoring.
+
+### Video
+
+<video
+  poster="./src/img%20and%20video/videoframe_12191.png"
+  src="./src/img%20and%20video/kalshi-trading-bot-reddit-video.mp4"
+  controls
+  playsinline
+  preload="metadata"
+  width="100%">
+  Your browser cannot play this clip inline. Open the file directly:
+  <a href="./src/img%20and%20video/kalshi-trading-bot-reddit-video.mp4">kalshi-trading-bot-reddit-video.mp4</a>.
+</video>
+
+### Still frame (full resolution)
+
+<p align="center">
+  <img
+    src="./src/img%20and%20video/videoframe_12191.png"
+    alt="Kalshi BTC 15m market: trading HUD with UP/DOWN prices and NightShark log (trigger, order, position confirm, stop-loss)"
+    width="100%" />
+  <br />
+  <em>Same session as the recording — Kalshi chart/order book with HUD and NightShark application log.</em>
+</p>
 
 ## Architecture
 
