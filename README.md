@@ -2,13 +2,19 @@
 
 Professional TypeScript bot for monitoring short-duration prediction markets across **Polymarket** and **Kalshi**, detecting pricing gaps, and placing buy orders on Polymarket when configured arbitrage rules are satisfied.
 
-**Canonical repository:** [github.com/sanzoI-tech/polymarket-kalshi-arbitrage-bot](https://github.com/sanzoI-tech/polymarket-kalshi-arbitrage-bot)
+**Canonical repository:** [github.com/defi-ape/polymarket-kalshi-arbitrage-bot](https://github.com/defi-ape/polymarket-kalshi-arbitrage-bot)
 
 The bot is designed for 15-minute markets where fast pricing updates, clear execution rules, and transparent runtime status matter. It continuously compares Kalshi YES pricing against Polymarket UP pricing, exposes a simple monitoring API, and can initialize an authenticated Polymarket order client for automated execution.
 
 <p>
-  <a href="https://github.com/sanzoI-tech/polymarket-kalshi-arbitrage-bot">
+  <a href="https://github.com/defi-ape/polymarket-kalshi-arbitrage-bot">
     <img src="https://img.shields.io/badge/Repository-GitHub-181717?style=for-the-badge&logo=github" alt="GitHub repository" />
+  </a>
+  <a href="https://polymarket.com">
+    <img src="https://img.shields.io/badge/Polymarket-Platform-6366f1?style=for-the-badge" alt="Polymarket" />
+  </a>
+  <a href="https://kalshi.com">
+    <img src="https://img.shields.io/badge/Kalshi-Platform-0ea5e9?style=for-the-badge" alt="Kalshi" />
   </a>
 </p>
 
